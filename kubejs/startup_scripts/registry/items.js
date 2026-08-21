@@ -375,4 +375,5 @@ StartupEvents.registry("item", (event) => {
     rocks("moon")
     rocks("mars")
     rocks("venus")
+
 })

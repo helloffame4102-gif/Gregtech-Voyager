@@ -362,6 +362,12 @@ function register_fluid(name, color, ingredients, flags) {
     })
 }
 
+function register_fluid_with_temp(name, color, ingredients, flags, temp) {
+    GTCEuStartupEvents.registry("gtceu:material", event => {
+        const mat = event.create(name).liquid(temp).components(ingredients).color(color).flags(flags)
+    })
+}
+
 function register_gas(name, color, ingredients, flags) {
     GTCEuStartupEvents.registry("gtceu:material", (event) => {
         const mat = event.create(name).gas().components(ingredients).color(color).flags(flags)
@@ -593,3 +599,12 @@ register_fluid("component_polymer", "0xc9bd9b", ["1x epoxy", "2x carbon", "1x bo
         .addDefaultEnchant()
         
 */
+// Rock Candy Cookie Line by HellOfFame
+register_fluid_with_temp("hot_water", 0x2c4099, ["2x hydrogen", "1x oxygen"], [electrolyze], 363)
+register_fluid_with_temp("raw_sugar_syrup", 0xe08d17, ["24x sugar", "16x water"], [no_decomp],320)
+register_fluid_with_temp("dark_syrup_waste", 0x733610, [], [no_decomp], 350)
+register_fluid_with_temp("purified_sugary_slurry", 0xedbc77, [], [no_decomp], 240)
+register_fluid_with_temp("dirty_rock_sugar_syrup", 0x5d188f, [],[no_decomp], 250)
+register_fluid_with_temp("rock_sugar_syrup", 0xc13ede, [], [no_decomp], 250)
+register_dust("washed_sugar", ["1x sugar"], 0xf6f0ec, [no_decomp], 0xe2bd95)
+register_dust("granulated_purified_sugar", [], 0xefe9e5, [no_decomp], 0xf6f0ec)

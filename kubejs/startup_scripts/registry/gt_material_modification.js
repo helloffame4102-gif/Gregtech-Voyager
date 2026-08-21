@@ -12,7 +12,11 @@ GTCEuStartupEvents.materialModification((_event) => {
     GTMaterials.get("calorite_carbide").setFormula("Rc4C2")
     GTMaterials.get("industrial_perfected_electrum").setFormula("(*Au**Ag*)5(C2Rc4)")
     GTMaterials.get("sulfuria").setFormula("*S*")
-
+    GTMaterials.get("purified_sugary_slurry").setFormula("*(C6H12O6)13**(H2O)7*")
+    GTMaterials.get("dirty_rock_sugar_syrup").setFormula("(C6H12O6)2(H2O)?(CO2)?")
+    GTMaterials.get("dark_syrup_waste").setFormula("*(C6H12O6)*?(H2O)C3?")
+    GTMaterials.get("rock_sugar_syrup").setFormula("**(C6H12O6)**9**(H2O)3**")
+    GTMaterials.get("granulated_purified_sugar").setFormula("*(C6H12O6)*")
     // 	TagPrefix.gem["setIgnored(com.gregtechceu.gtceu.api.data.chemical.material.Material,java.util.function.Supplier[])"](GTMaterialRegistry.getMaterial('source'), () => Item.getItem('ars_nouveau:source_gem'))
     // 	TagPrefix.block["setIgnored(com.gregtechceu.gtceu.api.data.chemical.material.Material,java.util.function.Supplier[])"](GTMaterialRegistry.getMaterial('source'), () => Item.getItem('ars_nouveau:source_gem_block'))
     // 	TagPrefix.block.modifyMaterialAmount(GTMaterialRegistry.getMaterial('source'),4)
