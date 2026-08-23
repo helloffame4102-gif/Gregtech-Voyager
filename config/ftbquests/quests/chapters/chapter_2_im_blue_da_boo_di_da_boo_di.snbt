@@ -1827,6 +1827,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "jzells hates this one"
 			tasks: [
 				{
 					id: "324EBA66D041BF00"

@@ -687,8 +687,8 @@
 				}
 			]
 			title: "Wrought Iron Tools [GT]"
-			x: -21.0d
-			y: 7.5d
+			x: -21.5d
+			y: 7.0d
 		}
 		{
 			dependencies: ["241DCDAF1DCCB290"]
@@ -984,6 +984,65 @@
 			}]
 			x: -28.5d
 			y: 12.5d
+		}
+		{
+			dependencies: ["12EEF6CEEB33CB25"]
+			id: "17B4A2B310307830"
+			optional: true
+			rewards: [
+				{
+					count: 16
+					id: "5F3CA9495FF895BC"
+					item: "kubejs:lv_tech_coin"
+					type: "item"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "77FBF66BD9292C4C"
+					table_id: 3238365205241762905L
+					type: "choice"
+				}
+				{
+					count: 2
+					id: "20E4408F9617CCE6"
+					item: "kubejs:lv_loot_bag"
+					type: "item"
+				}
+			]
+			size: 1.5d
+			subtitle: "True speed for Wrought Iron and Steel"
+			tasks: [
+				{
+					id: "0D76BA82B50D0A04"
+					item: "gtceu:steam_blast_furnace"
+					type: "item"
+				}
+				{
+					id: "0390F53BB2D39915"
+					item: "gtceu:lv_muffler_hatch"
+					type: "item"
+				}
+				{
+					count: 9L
+					id: "204679EE678FDDC5"
+					item: { Count: 9, id: "gtceu:steel_firebox_casing" }
+					type: "item"
+				}
+				{
+					count: 6L
+					id: "2C2EC55BA471C2B2"
+					item: { Count: 6, id: "gtceu:steel_brick_casing" }
+					type: "item"
+				}
+				{
+					count: 7L
+					id: "2EC1892334079221"
+					item: { Count: 7, id: "gtceu:steel_machine_casing" }
+					type: "item"
+				}
+			]
+			x: -25.5d
+			y: 11.9d
 		}
 		{
 			dependencies: ["182D72912E295B5F"]

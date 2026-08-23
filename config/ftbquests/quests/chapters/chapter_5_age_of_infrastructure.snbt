@@ -112,6 +112,7 @@
 			dependencies: ["41361FD7A092EE72"]
 			hide_dependency_lines: false
 			id: "6EE539D525D3D685"
+			subtitle: "We lied 2"
 			tasks: [{
 				id: "43B0711DFA7DB8C9"
 				item: "gtceu:titanite_dust"
@@ -805,6 +806,7 @@
 			id: "3AA061D9096EA590"
 			shape: "gear"
 			size: 2.0d
+			subtitle: "back in my day it was called a lapotronic super capacitor"
 			tasks: [{
 				id: "60FCC629BD1C760A"
 				item: "gtceu:power_substation"
@@ -944,6 +946,7 @@
 			id: "11AC4AEA702C5F50"
 			shape: "gear"
 			size: 1.5d
+			subtitle: "HOGGGG"
 			tasks: [{
 				id: "503530FB867B409C"
 				item: "gtceu:extreme_combustion_engine"
@@ -957,6 +960,7 @@
 			description: ["&5Titanitex&r is a great rotor option, you &again 301% more power&r output compared to your previous &1lunarium rotors&r."]
 			hide_dependency_lines: true
 			id: "0F070E1FA2BB4374"
+			subtitle: "Maybe we should y'know tune down these values"
 			tasks: [{
 				id: "03FB0577CBF32482"
 				item: {
@@ -973,6 +977,61 @@
 			title: "Titanex 879-HT B Rotors"
 			x: -2.0d
 			y: 16.5d
+		}
+		{
+			dependencies: [
+				"3FB4F231181DD428"
+				"2475AF86E29B26F3"
+				"50A265E32ADDD82E"
+				"7764E1FF769BDCB6"
+				"56E64E745168F87B"
+			]
+			description: [
+				"The &6Magmatic Foundry&r is your next tier of EBF. This is going to be super useful for on-demand blasting."
+				""
+				""
+				"It has a normal &eEBF Overclocks&r, but also &l&6Heat Boosting&r."
+				""
+				"For more information about modifiers, go to the &nModifiers&r tab in your questbook. It will also say on the machine controller."
+				""
+				"The description under the &6Magmatic Foundry&r describes &l&6heat boosting."
+			]
+			hide_dependency_lines: true
+			id: "319C5A7733086A0D"
+			shape: "gear"
+			size: 2.0d
+			subtitle: "To meet all of your autocrafting needs"
+			tasks: [
+				{
+					id: "37CF9306E4C3DB78"
+					item: "voyagercore:magmatic_foundry"
+					type: "item"
+				}
+				{
+					count: 35L
+					id: "4C2047B1FA47810F"
+					item: { Count: 35, id: "voyagercore:foundry_casing" }
+					type: "item"
+				}
+			]
+			title: "Better Blasting"
+			x: 3.0d
+			y: 14.0d
+		}
+		{
+			dependencies: ["1EA011566D0AF90B"]
+			hide_dependency_lines: true
+			id: "09D0717AD16E84FB"
+			shape: "gear"
+			size: 1.5d
+			subtitle: "om nom nom i love harvesting resources of the planet"
+			tasks: [{
+				id: "3E111D2B92B17BA4"
+				item: "gtceu:iv_large_miner"
+				type: "item"
+			}]
+			x: -9.75d
+			y: 5.25d
 		}
 		{
 			dependencies: [
@@ -1000,6 +1059,7 @@
 			description: ["Congratulations! You have reached the end of &d0.4a.pb Gregtech: Voyager!&r Stay updated on future pack updates in the discord!"]
 			id: "57273F946436DC4C"
 			size: 3.0d
+			subtitle: "nyooom"
 			tasks: [{
 				id: "3FF5D72EB486E44A"
 				item: {
@@ -1021,6 +1081,7 @@
 			]
 			hide_dependency_lines: true
 			id: "6355712EF473596B"
+			subtitle: "thats gonna hurt"
 			tasks: [{
 				count: 6L
 				id: "4F47F869F4E08FF1"
@@ -1133,6 +1194,7 @@
 		{
 			dependencies: ["313893E537CA5B6C"]
 			id: "014935D33AD9697A"
+			subtitle: "We lied"
 			tasks: [
 				{
 					id: "49488F119E9F41FE"
@@ -1212,6 +1274,7 @@
 			id: "36C332F72378DDFB"
 			shape: "gear"
 			size: 1.5d
+			subtitle: "hyper om nom nom"
 			tasks: [{
 				id: "75C3CB85F49D18E3"
 				item: "voyagercore:hyper_helper_calorie_converter"
@@ -1243,6 +1306,7 @@
 			id: "020017DDCD7BCB20"
 			shape: "gear"
 			size: 1.5d
+			subtitle: "four of them"
 			tasks: [{
 				id: "0AB0794F78DDD209"
 				item: "voyagercore:xl_turbine"
@@ -1271,6 +1335,7 @@
 			]
 			hide_dependency_lines: true
 			id: "33063EB46A6BB3B6"
+			subtitle: "4 in 1 deal"
 			tasks: [{
 				id: "0C48576563FBB194"
 				item: "kubejs:advanced_martian_plating"

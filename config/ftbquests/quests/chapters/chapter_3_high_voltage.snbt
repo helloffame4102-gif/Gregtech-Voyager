@@ -352,7 +352,7 @@
 			y: -6.0d
 		}
 		{
-			dependencies: ["6E68356E319A0B43"]
+			dependencies: ["06664D37742C6F43"]
 			description: [
 				"SMDs will &lmassively&r increase the yield of circuits per resource. Batch craft TONS of these and watch your early circuit problems go away!"
 				""
@@ -401,7 +401,7 @@
 			]
 			title: "SMDs"
 			x: -3.0d
-			y: -6.0d
+			y: 6.0d
 		}
 		{
 			dependencies: [
@@ -798,7 +798,7 @@
 				item: "gtceu:fluxed_cobalt_electrum_ingot"
 				type: "item"
 			}]
-			x: 5.0d
+			x: 5.5d
 			y: -4.0d
 		}
 		{
@@ -1751,7 +1751,7 @@
 			y: -8.0d
 		}
 		{
-			dependencies: ["6E68356E319A0B43"]
+			dependencies: ["06664D37742C6F43"]
 			description: [
 				"This SMD component is in a seperate quest because it takes &eplatinum&r to craft. &ePlatinum&r is a resource you will need a lot lot lot of eventually, but at this stage of progression it is only used for SMD diodes."
 				""
@@ -1778,8 +1778,8 @@
 				item: { Count: 32, id: "gtceu:smd_diode" }
 				type: "item"
 			}]
-			x: -2.5d
-			y: -7.0d
+			x: -2.0d
+			y: 6.0d
 		}
 		{
 			dependencies: [
@@ -1806,6 +1806,7 @@
 			]
 			shape: "gear"
 			size: 1.5d
+			subtitle: "better friends"
 			tasks: [
 				{
 					id: "1269CDD3C404233E"
@@ -2048,10 +2049,33 @@
 			y: 2.5d
 		}
 		{
-			dependencies: [
-				"6164D33ACEB4E515"
-				"1DAB52504FD2C584"
+			dependencies: ["47B86AAAB18C918E"]
+			id: "06664D37742C6F43"
+			rewards: [
+				{
+					id: "3E710CD4CAE15018"
+					item: "kubejs:hv_loot_bag"
+					type: "item"
+				}
+				{
+					count: 32
+					id: "70525FFD890D8261"
+					item: "kubejs:hv_tech_coin"
+					type: "item"
+				}
 			]
+			shape: "gear"
+			size: 1.5d
+			tasks: [{
+				id: "3FDB1F86B5F39BEB"
+				item: "voyagercore:smd_assembler"
+				type: "item"
+			}]
+			x: -2.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["6164D33ACEB4E515"]
 			id: "2FC046CA926EC302"
 			rewards: [
 				{
@@ -2201,6 +2225,7 @@
 			}]
 			shape: "gear"
 			size: 2.0d
+			subtitle: "4x more power"
 			tasks: [{
 				id: "53FAD5764DFD5FEF"
 				item: "gtceu:hv_machine_hull"
