@@ -7,6 +7,8 @@ gtceu/
 
 logs/
 
+*chesttracker/
+
 local/
 
 saves/
@@ -54,7 +56,8 @@ config/embeddium-options.json
 config/embeddium-mixins.properties
 config/embeddium-fingerprint.json
 config/fml.toml
-
+config/abridged.json
+config/chesttracker.json5
 .probe
 /kubejs/**/jsconfig.json
 /kubejs/config/probe-settings.json
@@ -64,7 +67,10 @@ user-prefs.json
 user-prefs.json
 kubejs/config/probejs.json
 *vscode*
+chesttracker/
 
 
 /config/spark/tmp
 config/aether-client.toml
+/chesttracker
+/chesttracker
