@@ -94,9 +94,17 @@ ServerEvents.recipes((event) => {
 
     event.recipes.gtceu
         .assembler("kubejs:platinum_casing")
-        .itemInputs("6x gtceu:platinum_plate", "1x gtceu:titanium_frame", "2x #gtceu:circuits/ev")
+        .itemInputs("6x gtceu:platinum_plate", "1x gtceu:titanium_frame", "1x #gtceu:circuits/hv")
         .circuit(6)
         .itemOutputs("2x voyagercore:platinum_casing")
+        .duration(30)
+        .EUt(16)
+
+    event.recipes.gtceu
+        .assembler("kubejs:energetic_casing")
+        .itemInputs("6x gtceu:energetic_alloy_plate", "1x gtceu:titanium_frame", "1x gtceu:fluxed_electrum_quadruple_wire")
+        .circuit(6)
+        .itemOutputs("2x voyagercore:energetic_casing")
         .duration(30)
         .EUt(16)
 
@@ -133,6 +141,30 @@ ServerEvents.recipes((event) => {
         )
         .circuit(6)
         .itemOutputs("4x voyagercore:radiant_titanex_casing")
+        .duration(30)
+        .EUt(16)
+
+    event.recipes.gtceu.assembler('kubejs:aquatic_casing')
+        .itemInputs(
+            '8x gtceu:watertight_casing',
+            `16x gtceu:treated_wood_plate`,
+            '2x gtceu:tungsten_steel_large_fluid_pipe',
+            'gtceu:iv_electric_pump'
+        )
+        .circuit(6)
+        .itemOutputs("8x voyagercore:aquatic_casing")
+        .duration(30)
+        .EUt(16)
+
+    event.recipes.gtceu.assembler('kubejs:woodland_casing')
+        .itemInputs(
+            '8x gtceu:corrosion_proof_casing',
+            `16x gtceu:treated_wood_plate`,
+            '2x gtceu:tungsten_steel_large_fluid_pipe',
+            'gtceu:iv_electric_piston'
+        )
+        .circuit(6)
+        .itemOutputs("8x voyagercore:woodland_casing")
         .duration(30)
         .EUt(16)
 
@@ -211,6 +243,9 @@ ServerEvents.recipes((event) => {
     cube_multi("tungsten", "autoclave")
     cube_multi("refined_fluxed_electrum", "thermal_centrifuge")
     cube_multi("platinum", "assembler")
+    cube_multi("energetic_alloy", "mixer")
+    cube_multi("tungsten_steel", "sifter")
+    cube_multi("titanium", "chemical_bath")
 
     event.shaped(
         Item.of("voyagercore:chemical_plant", 1), // arg 1: output
@@ -397,6 +432,55 @@ ServerEvents.recipes((event) => {
                 F: "gtceu:steam_machine_casing"
             }
         )
+
+    event.shaped(
+            Item.of(`voyagercore:loch_ness_fishing_port`, 1), // arg 1: output
+            [
+                "FEF",
+                "GBG", // arg 2: the shape (array of strings)
+                "HEH"
+            ],
+            {
+                B: `gtceu:ev_fisher`, //arg 3: the mapping object
+                G: `gtceu:watertight_steel_plate`,
+                E: "gtceu:laminated_glass",
+                F: "#gtceu:circuits/iv",
+                H: "gtceu:opal_rod"
+            }
+        )
+
+    event.shaped(
+            Item.of(`voyagercore:forest_regrowth_chamber`, 1), // arg 1: output
+            [
+                "FEF",
+                "GBG", // arg 2: the shape (array of strings)
+                "HEH"
+            ],
+            {
+                B: `gtceu:iv_cutter`, //arg 3: the mapping object
+                G: `gtceu:hastelloy_c_276_plate`,
+                E: "gtceu:laminated_glass",
+                F: "#gtceu:circuits/luv",
+                H: "gtceu:hastelloy_x_rod"
+            }
+        )
+
+    event.shaped(
+            Item.of(`voyagercore:homestead_garden`, 1), // arg 1: output
+            [
+                "FEF",
+                "GBG", // arg 2: the shape (array of strings)
+                "HEH"
+            ],
+            {
+                B: `gtceu:ulv_machine_casing`, //arg 3: the mapping object
+                G: `gtceu:rubber_plate`,
+                E: "minecraft:dirt",
+                F: "#gtceu:circuits/ulv",
+                H: "#minecraft:flowers"
+            }
+        )
+        
 })
 
 

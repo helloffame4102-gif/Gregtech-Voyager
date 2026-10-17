@@ -2,62 +2,142 @@
 
 ## Latest
 
-### Misc Changes
+## Additions
+- New Cube Chemical Bath
+- New Cube Sifter
+- Chemical Bath and Sifting Helper Recipe Modules
+- New Vacuum freezer helper recipe module
 
-- Old Helpers have been removed
+## Balance Changes
+- Desh dust from ilmenite is now “Raw Desh Dust”
+ - One dust -> 3 nuggets in EBF
+ - Can be used for DGS
+- Specialized recipes no longer need the specialization to run.
+- Ostrite veins are larger, and have higher weight (10->15)
 
 ## Questbook
-- Quest descriptions (at least 10)
-- EV+ Quest Rewards
-- "Mobs are hard" Chapter now has nano suit
-- Some quests are condensed
-- Multiblocks have started to move to “Multiblocks” chapter
-- “Mobs are hard” renamed to “The world vs you”
-- “The world vs you” QB now contains jetpack, and quarktech suit
-- Moon quest no longer needs space suit
-- Can now buy HV and EV bags (temporarily)
- 
+
+
+## Recipe Balance Changes
+- Added chem plant/helper recipe for sulfuria
+
+## Bugfixes/Missing Recipes
+- Ad Astra recipes are un-removed (custom recipes will remain)
+- Fixed bug where helpers couldn’t overclock one tier
+- Fixed bug where you could put paramount modules on the wrong paramount helper
+- Fixed some plat line recipes
+- Fixed Helper Factory Tooltip having incorrect OC Info
+- Steam Ore Washer can now have an input hatch for washing
+- GitHub Issues
+
+## Misc
+- Refactored Desh Line
+
+
+# 0.4.4.pb-testing-patch-5
+
 ## Additions
-- New IaF related Tinker's Modifiers
-  - Dragon Looting: Grants fortune to GT Ores
-  - Dragon Strength: Flat damage multiplier
-- Added Travel Anchors
-- Added FTB Filter System
-- Added Ad Astra: Giselle Addon
-- Added Chest Tracker: Reforged
-- More Craftable Inventory Pets
+- Raw Platinum Dust
+	- Can be EBF’d at HV for 3 Platinum Nuggets
+	- Can be used to make PGS
+- New Loch Ness Fishing Port
+- New Forest Regrowth Chamber
+- New Mixer Helper Recipe Module
+- New Homestead Flower Garden Multiblock
 
-### Balance/Recipe Changes
-- Energetic alloy tinker's material tuned down
-  - velocity 16.0 -> 4.0
-- Carbon tinker's material tuned down
-  - velocity 4.0 -> 2.0
-- Pink steel tinker's material tuned down
-  - durability 5640 -> 5040
-- Vanadium steel tinker's material buffed
-  - melee damage 8.0-> 12.0
-  - Mining speed 10.0 -> 12.0
-- Adam's Ars Plus mobs no longer grief
-- Nano-Suit is now a valid space suit (Pre Tier 3)
-- Quantum-Suit is now a valid space suit (All planets)
-- Mobs can no longer drop their armor
-- EV Motors now require 4x Kanthal wire instead of 2x
-- Nanosuit now needs Energetic alloy, netherite, and an HV Assembler
-- Dragon bone arrows now require an HV Assembler, and Black Steel
-- Gregified Travel Anchors
-- Buffed SMD Assembler recipe times
-- Gregified Netherite
-- Cookies are easier to make, and new jungle wood line is added to supplement
-- Inventory pets are now craftable: Anvil Pet, Magma Cube Pet, Squid Pet, Pixie Pet, Loot Pet, Sheep Pet, Silverfish Pet
-- AE2 Processors recipes buffed
-- Molecular Assembler recipe changed (buffed)
+## Balance Changes
+- Cube Multis can now have 4 input busses
+- Chemist helper specialization module no longer needs NBZ, or HOG
+- Platinum is no longer gotten from nickel ore, instead it gives “Raw Platinum Dust”
+- Platinum dust now requires an HV EBF (Kanthal)
+- Mana Infused Cookies now last twice as long
+- Source Berry Cookies last half as long
+- EV Basic modules take tungsten steel instead of niobium titanium
+- Plat line byproduct yield is much greater now with refactor
+- Mica ore veins now have a weight of 20 (was 2 before)
+- Titanex HTc no longer needs Titanite coils
 
-### Mod Updates
-- Updated Voyager Core
+## Questbook
+
+
+## Recipe Balance Changes
+- Skip recipes added to some AE2 storage components to avoid large nested crafts
+- SMD Assembler recipes are now just as fast as normal assembly recipes
+- AE2 Recipes have been “unremoved” (Note: changed recipes are the same. Missing recipes are now base)
+
+## Bugfixes/Missing Recipes
+- AE2 Pattern Access Terminal now has a recipe
+- Flat interfaces/pattern providers are now revertable
+- Fixed conflicting brick and flower pot assembler recipe
+- Fixed netherite bypass/duping bug with TConstruct
+- Removed Chisel Block -> Ingot recipes
+- Fixed source gem dupe
+- Fix Specialized Helper Tooltip
+- Cube Multis no longer break without 2 recipe inputs
+- Steam multis are now attached to the correct recipe maps
+- Helper computation array fluid recipe inputs are now in increments of 144
+- Annealed copper/fluxed electrum recipes fixed
+- Fixed bug where air couldn’t be collected because of circuit issues
+- GitHub Issues
+
+## Misc
+- Refactored Plat Line (Again)
+
+
+## 0.4.3a.pb-patch-3
+
+## Additions
+- New Moon Sand/Rock processing line
+- New Jungle Wood processing line
+- New Cube Mixer
+- Hungry Helper can now generate parallel power with parallels
+- Added Energetic Casing
+- Added 5 new cookie types
+- Added “Chemist” helper specialization
+- Added Helperade (Blue Raspberry)
+- IF Addons are now craftable
+- More hungry helper modules are craftable
+
+## Balance Changes
+- Palladium ore removed from Mars
+- Platinum ore moved to Tier 3 Planets
+- Twilight forest ores updated
+- Nerfed energetic pearlic iron tool rod damage multiplier ( 2.0 -> 1.25)
+- Martian Air is now attainable through gas collecting
+- Helpers now gain more XP for parallels
+ - XP = (((recipeTime^1.8 * recipeTier^1.2) / 3200) + recipeTier) * (1 + pars / 3)
+- Helpers can now OC by one tier
+
+## Questbook
+- New Inventory Pets QB Chapter
+- Started adding custom lines to Processing Lines Chapter (Since they were not visible before)
+
+## Recipe Balance Changes
+- Some helper modules are now cheaper
+- Metallic Mica can now use Lubricant instead of Heavy Oil
+- Platinum casing now takes 1 HV circuit instead of 2 EV Circuits
+- Plat-line Helper recipes changed to end products
+- AE2 Patterns are now in an EV assembler
+- Flat pattern provider is now craftable
+- Certain casings are now breakable
+- Some Inventory pets are no longer made using Ars
+- Enderman pet is now craftable
+- Martian sand recipes buffed
+- Added new more efficient recipe for metallic mica
+- (Temporary) Desh-line is now significantly cheaper (for the sake of playtesting)
 
 ## Bugfixes
-- Fixed LaserIO Crafting recipes
-- Fixed Raw Oil recipes
-- Reduced lag from Tom's Simple Storage (it may still be laggy with Sophisticated Storage still)
-- Ilmenite no longer spawns in the end
-- *many* GitHub Issues
+- Steam Compressor now works
+- All ore veins are shown with the raw ore, not block
+- Hungry helper modules now show output boost
+- Specialization helpers now show “Specialization slots” when formed instead of “Recipe slots”
+- GitHub Issues
+
+## Misc
+- Refactored Platline
+- GT Fertilizer now works in the IF plant fertilizer
+
+## Mods
+- Swapped ChestTracker with FindMe
+- Updated Voyager Core
+- Updated Gregeric Tinkering

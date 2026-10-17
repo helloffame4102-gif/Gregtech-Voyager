@@ -207,7 +207,6 @@ ServerEvents.recipes((event) => {
         .itemInputs("2x kubejs:refined_fluxed_electrum_crystal")
         .itemOutputs("1x gtceu:hot_refined_fluxed_electrum_ingot")
         .inputFluids("kubejs:blasting_gas 100")
-        .circuit(1)
         .duration(20 * 50)
         .EUt(1925)
         .blastFurnaceTemp(3600)
@@ -247,6 +246,8 @@ ServerEvents.recipes((event) => {
     ebf_recipe("calorite", 120 * 20, 7860 * 4, 5300, "gtceu:rocket_fuel", "iv", true)
     ebf_recipe("perfected_electrum", 200 * 20, 7860 * 4, 6100, "gtceu:rocket_fuel", "iv", true)
     ebf_recipe("industrial_perfected_electrum", 150 * 20, 7860 * 4, 7200, "gtceu:rocket_fuel", "iv", true)
+
+    ebf_recipe_ingot("platinum", 40 * 20, 280, 1828, "gtceu:oxygen")
 
     ebf_recipe("naquadah_alloy", 20 * 60, 30720, 7800, "gtceu:argon", "iv", false)
 })

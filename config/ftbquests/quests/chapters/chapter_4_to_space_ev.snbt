@@ -190,7 +190,7 @@
 		}
 		{
 			id: "34ED22791B767607"
-			subtitle: "Petrochem can help a lot with this"
+			subtitle: "Jungle wood line can help a lot with this"
 			tasks: [{
 				id: "151447FA86736D1B"
 				item: "gtceu:acetone_bucket"
@@ -1468,6 +1468,11 @@
 					item: "gtceu:cube_oven"
 					type: "item"
 				}
+				{
+					id: "4CA51E160300BB7D"
+					item: "gtceu:cube_mixer"
+					type: "item"
+				}
 			]
 			title: "Cube Multis"
 			x: 6.0d
@@ -1784,7 +1789,7 @@
 			y: 15.0d
 		}
 		{
-			dependencies: ["5D1E251B9F28C8B4"]
+			dependencies: ["04BD5101521DF8BC"]
 			id: "011785EFAD617602"
 			subtitle: "For applying modules past HV"
 			tasks: [{
@@ -1878,7 +1883,7 @@
 				"5B6739036C267EC4"
 			]
 			description: [
-				"The &2Hungry Helper&r is &cgrandma's favorite&r. As a consquence, he is always hungry, and only getting &lhungrier&r."
+				"The &2Hungry Helper&r is &cgrandma's favorite&r. As a consequence, he is always hungry, and only getting &lhungrier&r."
 				""
 				"As this helper levels up, he will eat &6grandma's cookies faster and faster&r, but also generate &amore EU/t&r"
 				""
@@ -2149,6 +2154,17 @@
 			}]
 			x: 1.0d
 			y: 18.0d
+		}
+		{
+			dependencies: ["1E76B42857AC04C9"]
+			id: "1AB205252A99F47D"
+			tasks: [{
+				id: "265026690CEC3A45"
+				item: "gtceu:hssg_ingot"
+				type: "item"
+			}]
+			x: 9.5d
+			y: 4.5d
 		}
 	]
 	title: "Chapter 4: To Space! (EV)"

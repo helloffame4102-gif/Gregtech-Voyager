@@ -148,7 +148,6 @@ ServerEvents.recipes((event) => {
         event.recipes.gtceu
             .assembler(`kubejs:${tier}_output_helper_module`)
             .itemInputs(
-                `voyagercore:${tier}_speed_helper_module`,
                 `voyagercore:${tier}_efficiency_helper_module`,
                 tier != "mv" ? `voyagercore:${tier}_parallel_helper_module` : `voyagercore:${tier}_basic_helper_module`,
                 `8x ${coilMat}_coil_block`,
@@ -167,10 +166,10 @@ ServerEvents.recipes((event) => {
                 .assembler(`kubejs:${tier}_speed_helper_module`)
                 .itemInputs(
                     `voyagercore:${tier}_helper_module`,
-                    `8x gtceu:${platemat}_plate`,
+                    `4x gtceu:${platemat}_plate`,
                     `32x gtceu:fine_${wiremat}_wire`,
-                    `4x #gtceu:circuits/${ctier}`,
-                    `2x gtceu:${tier}_electric_piston`,
+                    `2x #gtceu:circuits/${ctier}`,
+                    `1x gtceu:${tier}_electric_piston`,
                     `gtceu:${tier}_transformer_1a`
                 )
                 .itemInputs(extra_inputs)
@@ -182,10 +181,10 @@ ServerEvents.recipes((event) => {
                 .assembler(`kubejs:${tier}_speed_helper_module`)
                 .itemInputs(
                     `voyagercore:${tier}_helper_module`,
-                    `8x gtceu:${platemat}_plate`,
+                    `4x gtceu:${platemat}_plate`,
                     `32x gtceu:fine_${wiremat}_wire`,
-                    `4x #gtceu:circuits/${ctier}`,
-                    `2x gtceu:${tier}_electric_piston`,
+                    `2x #gtceu:circuits/${ctier}`,
+                    `1x gtceu:${tier}_electric_piston`,
                     `gtceu:${tier}_transformer_1a`
                 )
                 .itemOutputs(`voyagercore:${tier}_speed_helper_module`)
@@ -237,8 +236,8 @@ ServerEvents.recipes((event) => {
                 .assembler(`kubejs:${tier}_basic_helper_module`)
                 .itemInputs(
                     `voyagercore:${tier}_helper_module`,
-                    `4x gtceu:${platemat}_plate`,
-                    `32x gtceu:fine_${wiremat}_wire`,
+                    `1x gtceu:${platemat}_plate`,
+                    `16x gtceu:fine_${wiremat}_wire`,
                     `2x #gtceu:circuits/${ctier}`,
                     `1x gtceu:${tier}_electric_pump`,
                     `1x gtceu:${tier}_electric_piston`
@@ -341,6 +340,25 @@ ServerEvents.recipes((event) => {
         )
     }
 
+    function tier_recipe_module_cube2(tier, machine, machine2, wiremat, misc)
+    {
+        event.shaped(
+            Item.of(`voyagercore:${tier}_${machine}_helper_recipe_module`, 1), // arg 1: output
+            [
+                'BDB',
+                'ACA', // arg 2: the shape (array of strings)
+                'EAE'
+            ],
+            {
+                A: misc,
+                B: `gtceu:${wiremat}_double_wire`,  //arg 3: the mapping object
+                C: `voyagercore:${tier}_helper_module`,
+                D: `gtceu:cube_${machine2}`,
+                E: `#gtceu:circuits/${tier}`
+            }
+        )
+    }
+
     function grandma_module(id, level, tier, items, fluids)
     {
         assembler_paramount_module_recipe(id, tier, level, "grandma", items, fluids)
@@ -377,6 +395,15 @@ ServerEvents.recipes((event) => {
     hungry_module("stomach", 3, "luv",
         ['4x gtceu:double_naquadah_plate', 'voyagercore:luv_basic_helper_module', 'gtceu:luv_fluid_regulator', 'voyagercore:chemical_plant_casing', '4x gtceu:tungsten_steel_tiny_fluid_pipe'],
         ['gtceu:fluoroantimonic_acid 16000']
+    )
+
+    hungry_module("satiating", 1, "ev",
+        ['4x gtceu:double_energetic_alloy_plate', 'voyagercore:ev_efficiency_helper_module', '32x kubejs:bag_of_cookies'],
+        ['minecraft:milk 8000']
+    )
+    hungry_module("satiating", 2, "ev",
+        ['4x gtceu:double_energetic_pearlic_alloy_plate', 'voyagercore:ev_efficiency_helper_module', '32x kubejs:bag_of_uranium_cookies'],
+        ['minecraft:milk 8000']
     )
 
     grandma_module("baking_sheet", 1, "hv", 
@@ -443,7 +470,7 @@ ServerEvents.recipes((event) => {
 
     speed_module_recipe("ev", "iv", "lunarium", "titanium_carbide")
     efficiency_module_recipe("ev", "ev", "refined_fluxed_electrum", "refined_fluxed_electrum", "gtceu:sodium_potassium 2000")
-    basic_module_recipe("ev", "iv", "niobium_titanium", "desh")
+    basic_module_recipe("ev", "iv", "tungsten_steel", "desh")
     parallel_module_recipe("ev", "luv", "iridium", "uranium_triplatinum")
 
     speed_module_recipe("iv", "luv", "titanex-901-htc", "hsse")
@@ -463,11 +490,14 @@ ServerEvents.recipes((event) => {
     tier_recipe_module_cube("ev", "thermal_centrifuge", "nichrome", "gtceu:ev_electric_motor")
     tier_recipe_module_cube("ev", "macerator", "tungsten", "gtceu:ev_electric_piston")
     tier_recipe_module_cube("ev", "electrolyzer", "platinum", "gtceu:tempered_glass")
+    tier_recipe_module_cube("ev", "mixer", "desh", "gtceu:desh_rotor")
     // tier_recipe_module_cube("luv", "assembler", "industrial_perfected_electrum", "gtceu:luv_field_generator")
     tier_recipe_module_cube("ev", "oven", "nichrome", "gtceu:cupronickel_spring")
+    tier_recipe_module_cube("ev", "sifter", "tungsten_steel", "gtceu:item_filter")
+    tier_recipe_module_cube2("ev", "chem_bath", "chemical_bath", "vanadium_gallium", "gtceu:ev_electric_pump")
 
     assembler_module_recipe('smd_assembler', 'hv', true,
-        ['voyagercore:hv_parallel_helper_module', 'gtceu:hv_assembler', '#gtceu:circuits/iv', '16x gtceu:smd_diode', '16x gtceu:smd_inductor', '16x gtceu:smd_capacitor', '16x gtceu:fine_fluxed_cobalt_electrum_wire'],
+        ['3x gtceu:hv_robot_arm', 'gtceu:hv_assembler', '#gtceu:circuits/iv', '16x gtceu:smd_diode', '16x gtceu:smd_inductor', '16x gtceu:smd_capacitor', '16x gtceu:fine_energetic_pearlic_alloy_wire'],
         'gtceu:radon 250'
     )
     
@@ -552,4 +582,18 @@ ServerEvents.recipes((event) => {
             E: '#gtceu:circuits/hv'
         }
     )
+
+    global.recipe_chem_plant(
+        event,
+        "ev_chemist_helper_recipe_module",
+        ["1x voyagercore:ev_helper_module", "8x gtceu:laminated_glass", "gtceu:iv_electric_pump"],
+        ["gtceu:component_polymer 2000", "gtceu:styrene_butadiene_rubber 1500", "gtceu:polyvinyl_butyral 1000"],
+        ["1x voyagercore:ev_chemist_helper_recipe_module"],
+        [],
+        30,
+        1920,
+        5400,
+        false
+    )
+
 })

@@ -66,9 +66,9 @@ ServerEvents.recipes((event) => {
     global.recipe_centrifuge(
         event,
         "martian_sand",
-        "64x gtceu:martian_sand_dust",
+        "25x gtceu:martian_sand_dust",
         "gtceu:toluene 500",
-        ["12x gtceu:salt_dust", "9x gtceu:magnetite_dust", "7x gtceu:magnesium_dust", "5x gtceu:phosphorus_dust", "3x gtceu:inert_sulfur_dust"],
+        ["5x gtceu:salt_dust", "5x gtceu:magnetite_dust", "5x gtceu:magnesium_dust", "5x gtceu:phosphorus_dust", "5x gtceu:inert_sulfur_dust"],
         [],
         60,
         1920
@@ -103,6 +103,18 @@ ServerEvents.recipes((event) => {
         "kubejs:high_temp_binding_agent_s 1152",
         40,
         7860 * 1.5,
+        5000, "chemist"
+    )
+
+    global.recipe_chem_plant(
+        event,
+        "sulfuria_chem_plant",
+        ["2x gtceu:copper_sulfuriate_dust"],
+        [],
+        ["3x gtceu:sulfuria_dust", "gtceu:copper_dust"],
+        [],
+        40,
+        7860,
         5000, "chemist"
     )
 

@@ -213,7 +213,6 @@ LootJS.modifiers((event) => {
             Item.of("bhc:red_heart").withChance(1),
             Item.of("2x toms_storage:ts.inventory_connector").withChance(0.1),
             Item.of("2x minecraft:ender_pearl").withChance(8),
-            Item.of("1x kubejs:track_runner_helper").withChance(0.25)
         ])
 
     event
@@ -282,10 +281,9 @@ LootJS.modifiers((event) => {
             Item.of("8x kubejs:ev_universal_coin").withChance(75),
             Item.of("gtceu:ev_vanadium_battery").withChance((2 / 100) * 100),
             Item.of("1x kubejs:ev_helper_computation_array").withChance((1 / 100) * 100),
-            Item.of("1x kubejs:lcptr_helper").withChance((2 / 100) * 100),
             Item.of("4x gtceu:titanium_carbide_ingot").withChance((3 / 100) * 100),
             Item.of("2x minecraft:nether_star").withChance((6 / 100) * 100),
-            Item.of("1x gtceu:quantum").withChance((2 / 100) * 100),
+            Item.of("1x gtceu:quantum_star").withChance((2 / 100) * 100),
             Item.of({ type: "minecraft:item_nbt", item: "minecraft:enchanted_book", nbt: { StoredEnchantments: [{ id: "minecraft:fortune", lvl: 5 }] } }).withChance(0.25),
             Item.of({ type: "minecraft:item_nbt", item: "minecraft:enchanted_book", nbt: { StoredEnchantments: [{ id: "apotheosis:life_mending", lvl: 3 }] } }).withChance(0.25),
             Item.of({ type: "minecraft:item_nbt", item: "minecraft:enchanted_book", nbt: { StoredEnchantments: [{ id: "minecraft:looting", lvl: 5 }] } }).withChance(0.25),
@@ -304,18 +302,57 @@ LootJS.modifiers((event) => {
 })
 
 /**
+ * 
+ * @param {Internal.Player} player 
+ * @param {string} loot_table 
+ */
+function lootbag_drop_loot(player, loot_table) {
+    const LootParams = Java.loadClass('net.minecraft.world.level.storage.loot.LootParams')
+    const LootContextParams = Java.loadClass('net.minecraft.world.level.storage.loot.parameters.LootContextParams')
+    const LootContextParamSets = Java.loadClass('net.minecraft.world.level.storage.loot.parameters.LootContextParamSets')
+
+    const level = player.level
+    const server = player.server
+
+    const lootTable = server.getLootData().getLootTable(ResourceLocation(loot_table))
+
+    const context = new LootParams.Builder(level)
+        .withParameter(LootContextParams.THIS_ENTITY, player)
+        .withParameter(LootContextParams.ORIGIN, player.position())
+        .create(LootContextParamSets.GIFT)
+
+        for (let i = 0; i < rollDropTimes(); i++) {
+            let loot = lootTable.getRandomItems(context)
+            loot.forEach(item => {
+                let itemEntity = level.createEntity("item")
+
+                itemEntity.x = player.x
+                itemEntity.y = player.y
+                itemEntity.z = player.z
+
+                itemEntity.item = item
+                itemEntity.pickupDelay = 20
+
+                itemEntity.setMotion(
+                    (Math.random() - 0.5) * 0.1,
+                    0.2,
+                    (Math.random() - 0.5) * 0.1
+                )
+
+                itemEntity.spawn()
+            })
+        }
+}
+
+/**
  *
  * @param {*} tier
  */
 function lootbag_drop_event(tier) {
     ItemEvents.rightClicked(`kubejs:${tier}_loot_bag`, (event) => {
         const player = event.player
+        lootbag_drop_loot(player, `kubejs:${tier}_loot_bag`)
 
-        for (let i = 0; i < rollDropTimes(); i++) {
-            event.server.runCommandSilent(
-                `/execute at ${player.username} run loot spawn ~ ~ ~ loot kubejs:${tier}_loot_bag` //LOL!!! (if you know how to do this in kjs make a pull req pls)
-            )
-        }
         event.server.runCommandSilent(`/playsound minecraft:item.bundle.drop_contents player ${player.username}`)
         event.item.shrink(1)
     })
@@ -329,12 +366,8 @@ lootbag_drop_event("ev")
 
 ItemEvents.rightClicked("kubejs:stone_bag", (event) => {
     const player = event.player
+    lootbag_drop_loot(player, `kubejs:stone_bag`)
 
-    for (let i = 0; i < rollDropTimes(); i++) {
-        event.server.runCommandSilent(
-            `/execute at ${player.username} run loot spawn ~ ~ ~ loot kubejs:stone_bag` //LOL!!! (if you know how to do this in kjs make a pull req pls)
-        )
-    }
     event.server.runCommandSilent(`/playsound minecraft:item.bundle.drop_contents player ${player.username}`)
     event.item.shrink(1)
 })

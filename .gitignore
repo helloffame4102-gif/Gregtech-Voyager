@@ -74,3 +74,4 @@ chesttracker/
 config/aether-client.toml
 /chesttracker
 /chesttracker
+/config
